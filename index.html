@@ -146,8 +146,39 @@
             word-break: break-all;
         }
 
+        .email-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
         .copy-button {
             background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .copy-button:hover {
+            background: #5568d3;
+        }
+
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+
+        .send-email-button {
+            background: #48bb78;
             color: white;
             border: none;
             padding: 12px 30px;
@@ -157,14 +188,19 @@
             cursor: pointer;
             margin-top: 15px;
             transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .copy-button:hover {
-            background: #5568d3;
+        .send-email-button:hover {
+            background: #38a169;
         }
 
-        .copy-button:active {
-            transform: scale(0.95);
+        .send-email-button:active {
+            transform: scale(0.98);
         }
 
         .copy-success {
@@ -336,15 +372,21 @@
             
             <div class="email-display">
                 <div class="email-label">EMAIL ADDRESS</div>
-                <div class="email-address" id="email-text">joshuaoluwasegun100@gmail.com</div>
-                <button class="copy-button" onclick="copyEmail()">📋 Copy Email</button>
+                <div class="email-row">
+                    <div class="email-address" id="email-text">joshuaoluwasegun100@gmail.com</div>
+                    <button class="copy-button" onclick="copyEmail()" title="Copy email to clipboard">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy
+                    </button>
+                </div>
                 <div class="copy-success" id="copy-success">✓ Email copied to clipboard!</div>
             </div>
 
-            <p>Click the button above to copy the email address, or click below to open your email client.</p>
-            
             <a href="mailto:joshuaoluwasegun100@gmail.com" style="text-decoration: none;">
-                <button class="copy-button">✉️ Open Email Client</button>
+                <button class="send-email-button">Send email</button>
             </a>
 
             <button class="back-button" onclick="showLanding()">← Back to Home</button>
