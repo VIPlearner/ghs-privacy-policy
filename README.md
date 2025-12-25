@@ -1,0 +1,1 @@
+# ghs-privacy-policy
